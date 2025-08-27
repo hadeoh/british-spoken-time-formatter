@@ -1,38 +1,43 @@
 package org.playground;
 
 import org.playground.exceptions.InvalidTimeFormatException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Scanner;
 
 public class BritishSpokenTimeConsoleApp {
 
+    private static final Logger logger = LoggerFactory.getLogger(BritishSpokenTimeConsoleApp.class);
+
+
     public static void main(String[] args) {
         BritishTimeFormatter timeFormatter = new BritishTimeFormatter();
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("==== British Spoken Time Converter ====");
-        System.out.println("Enter a time in HH:mm format. Type 'exit' to quit.");
+        logger.info("==== British Spoken Time Converter ====");
+        logger.info("Enter a time in HH:mm format. Type 'exit' to quit.");
 
         while (true) {
-            System.out.println("Enter time: ");
+            logger.info("Enter time: ");
             String input = scanner.nextLine().trim();
 
             if (input.isEmpty()) {
                 // Just prompt again instead of crashing/exiting
-                System.out.println("No input entered. Please try again.");
+                logger.error("No input entered. Please try again.");
                 continue;
             }
 
             if (input.equals("exit")) {
-                System.out.println("==== END ====");
+                logger.info("==== END ====");
                 break;
             }
 
             try {
                 String britishSpokenTime = timeFormatter.toBritishSpokenTime(input);
-                System.out.println("British spoken time is: " + britishSpokenTime);
+                logger.info("British spoken time is: " + britishSpokenTime);
             } catch (InvalidTimeFormatException e) {
-                System.out.println(e.getMessage());
+                logger.error(e.getMessage());
             }
         }
         scanner.close();
