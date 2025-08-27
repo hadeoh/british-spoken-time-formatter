@@ -35,4 +35,9 @@ jobs:
       - name: SonarCloud Scan
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B verify sonar:sonar -Dsonar.login=$SONAR_TOKEN
+        run: |
+          mvn -B verify sonar:sonar \
+          -Dsonar.projectKey=hadeoh_british-spoken-time-formatter \
+          -Dsonar.organization=hadeoh \
+          -Dsonar.host.url=https://sonarcloud.io \
+          -Dsonar.login=$SONAR_TOKEN
