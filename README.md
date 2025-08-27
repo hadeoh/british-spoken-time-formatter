@@ -36,8 +36,10 @@ For example:
         mvn clean compile
     #### Run app:
         mvn exec:java -Dexec.mainClass="org.playground.BritishSpokenTimeConsoleApp"
-   #### Run tests:
+    #### Run tests:
         mvn test
+    #### Run Checkstyle: This uses Google Java Style
+        mvn checkstyle:check
 3. ### Design Decisions
 
    - Strategy Pattern: Each minute rule is encapsulated in its own class (OClockStrategy, QuarterPastStrategy, etc.).
