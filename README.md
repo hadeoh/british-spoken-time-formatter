@@ -2,6 +2,7 @@
 
 ![Build](https://github.com/hadeoh/british-spoken-time-formatter/actions/workflows/ci.yml/badge.svg)
 [![codecov](https://codecov.io/github/hadeoh/british-spoken-time-formatter/graph/badge.svg?token=1KS7OIB6IL)](https://codecov.io/github/hadeoh/british-spoken-time-formatter)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=hadeoh_british-spoken-time-formatter&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=hadeoh_british-spoken-time-formatter)
 
 A Java program that converts digital time (`HH:mm`) into its **British spoken form**. This was implemented as a console app for interaction with client.
 
@@ -40,6 +41,8 @@ For example:
         mvn test
     #### Run Checkstyle: This uses Google Java Style
         mvn checkstyle:check
+    #### Format code base according to code style configured
+        mvn fmt:format
 3. ### Design Decisions
 
    - Strategy Pattern: Each minute rule is encapsulated in its own class (OClockStrategy, QuarterPastStrategy, etc.).
