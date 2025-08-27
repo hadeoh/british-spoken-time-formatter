@@ -14,6 +14,6 @@ public class ToImpl implements SpokenTimeInterface {
     @Override
     public String speakBritishTime(LocalTime time) {
         int nextHour = (time.getHour() % 12) + 1;
-        return (60 - time.getMinute()) + " to " + TIME_INDEXES[nextHour % 12];
+        return MINUTES_IN_WORDS[60 - time.getMinute()] + " to " + TIME_INDEXES[nextHour % 12];
     }
 }

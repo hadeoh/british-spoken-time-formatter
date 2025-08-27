@@ -4,11 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="373a4a6f-5e89-41fe-be9b-37af0e9aa34c" name="Changes" comment="" />
+    <list default="true" id="373a4a6f-5e89-41fe-be9b-37af0e9aa34c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playground/BritishSpokenTimeConsoleApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/playground/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/playground/implementations/OClockImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playground/implementations/OClockImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/playground/implementations/PastImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playground/implementations/PastImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/playground/implementations/ToImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playground/implementations/ToImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/playground/interfaces/SpokenTimeInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playground/interfaces/SpokenTimeInterface.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -25,6 +41,26 @@
     "RunOnceActivity.ShowReadmeOnStart": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="BritishSpokenTimeConsoleApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.playground.BritishSpokenTimeConsoleApp" />
+      <module name="formatter" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.playground.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.BritishSpokenTimeConsoleApp" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

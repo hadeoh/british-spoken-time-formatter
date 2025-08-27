@@ -4,15 +4,14 @@ import org.playground.interfaces.SpokenTimeInterface;
 
 import java.time.LocalTime;
 
-public class PastImpl implements SpokenTimeInterface {
+public class NoonImpl implements SpokenTimeInterface {
     @Override
     public boolean supports(LocalTime time) {
-        int minute = time.getMinute();
-        return minute > 0 && minute < 30 && minute != 15;
+        return time.getMinute() == 0 && time.getHour() == 12;
     }
 
     @Override
     public String speakBritishTime(LocalTime time) {
-        return MINUTES_IN_WORDS[time.getMinute()] + " past " + TIME_INDEXES[time.getHour() % 12];
+        return "noon";
     }
 }
