@@ -12,7 +12,7 @@ public class BritishSpokenTimeConsoleApp {
 
 
     public static void main(String[] args) {
-        BritishTimeFormatter timeFormatter = new BritishTimeFormatter();
+        BritishSpokenTimeFormatter timeFormatter = new BritishSpokenTimeFormatter();
         Scanner scanner = new Scanner(System.in);
 
         logger.info("==== British Spoken Time Converter ====");

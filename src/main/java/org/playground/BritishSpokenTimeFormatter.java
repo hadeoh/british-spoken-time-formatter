@@ -5,7 +5,7 @@ import org.playground.utils.TimeParser;
 
 import java.time.LocalTime;
 
-public class BritishTimeFormatter {
+public class BritishSpokenTimeFormatter {
 
     private final SpokenTimeFactory spokenTimeFactory = new SpokenTimeFactory();
 
