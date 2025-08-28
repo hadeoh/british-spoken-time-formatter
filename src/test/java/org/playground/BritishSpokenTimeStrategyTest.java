@@ -1,15 +1,17 @@
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+package org.playground;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.time.LocalTime;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.playground.implementations.*;
 
 public class BritishSpokenTimeStrategyTest {
 
   @Test
   public void testOClockStrategy() {
-    OClockImpl impl = new OClockImpl();
+    OClockStrategyImpl impl = new OClockStrategyImpl();
     LocalTime time = LocalTime.of(3, 0);
     assertTrue(impl.supports(time));
     assertEquals("three o'clock", impl.speakBritishTime(time));
@@ -17,7 +19,7 @@ public class BritishSpokenTimeStrategyTest {
 
   @Test
   public void testQuarterPastStrategy() {
-    QuarterPastImpl impl = new QuarterPastImpl();
+    QuarterPastStrategyImpl impl = new QuarterPastStrategyImpl();
     LocalTime time = LocalTime.of(4, 15);
     assertTrue(impl.supports(time));
     assertEquals("quarter past four", impl.speakBritishTime(time));
@@ -25,7 +27,7 @@ public class BritishSpokenTimeStrategyTest {
 
   @Test
   public void testHalfPastStrategy() {
-    HalfPastImpl impl = new HalfPastImpl();
+    HalfPastStrategyImpl impl = new HalfPastStrategyImpl();
     LocalTime time = LocalTime.of(7, 30);
     assertTrue(impl.supports(time));
     assertEquals("half past seven", impl.speakBritishTime(time));
@@ -33,7 +35,7 @@ public class BritishSpokenTimeStrategyTest {
 
   @Test
   public void testQuarterToStrategy() {
-    QuarterToImpl impl = new QuarterToImpl();
+    QuarterToStrategyImpl impl = new QuarterToStrategyImpl();
     LocalTime time = LocalTime.of(9, 45);
     assertTrue(impl.supports(time));
     assertEquals("quarter to ten", impl.speakBritishTime(time));
@@ -41,7 +43,7 @@ public class BritishSpokenTimeStrategyTest {
 
   @Test
   public void testPastStrategy() {
-    PastImpl impl = new PastImpl();
+    PastStrategyImpl impl = new PastStrategyImpl();
     LocalTime time = LocalTime.of(3, 10);
     assertTrue(impl.supports(time));
     assertEquals("ten past three", impl.speakBritishTime(time));
@@ -49,7 +51,7 @@ public class BritishSpokenTimeStrategyTest {
 
   @Test
   public void testToStrategy() {
-    ToImpl impl = new ToImpl();
+    ToStrategyImpl impl = new ToStrategyImpl();
     LocalTime time = LocalTime.of(8, 40);
     assertTrue(impl.supports(time));
     assertEquals("twenty to nine", impl.speakBritishTime(time));
@@ -57,7 +59,7 @@ public class BritishSpokenTimeStrategyTest {
 
   @Test
   public void testBefore35thMinuteStrategy() {
-    Before35thMinuteImpl impl = new Before35thMinuteImpl();
+    DigitalThirtyOneToThirtyFourStrategyImpl impl = new DigitalThirtyOneToThirtyFourStrategyImpl();
     LocalTime time = LocalTime.of(6, 32);
     assertTrue(impl.supports(time));
     assertEquals("six thirty two", impl.speakBritishTime(time));
@@ -65,7 +67,7 @@ public class BritishSpokenTimeStrategyTest {
 
   @Test
   public void testMidnightStrategy() {
-    MidnightImpl impl = new MidnightImpl();
+    MidnightStrategyImpl impl = new MidnightStrategyImpl();
     LocalTime time = LocalTime.of(0, 0);
     assertTrue(impl.supports(time));
     assertEquals("midnight", impl.speakBritishTime(time));
@@ -73,7 +75,7 @@ public class BritishSpokenTimeStrategyTest {
 
   @Test
   public void testNoonStrategy() {
-    NoonImpl impl = new NoonImpl();
+    NoonStrategyImpl impl = new NoonStrategyImpl();
     LocalTime time = LocalTime.of(12, 0);
     assertTrue(impl.supports(time));
     assertEquals("noon", impl.speakBritishTime(time));

@@ -1,10 +1,11 @@
-import static org.junit.Assert.assertTrue;
+package org.playground;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import org.junit.Test;
-import org.playground.BritishSpokenTimeConsoleApp;
+import org.junit.jupiter.api.Test;
 
 public class BritishSpokenTimeConsoleAppTest {
 

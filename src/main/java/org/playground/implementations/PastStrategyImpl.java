@@ -1,9 +1,10 @@
 package org.playground.implementations;
 
 import java.time.LocalTime;
-import org.playground.interfaces.SpokenTimeInterface;
+import org.playground.interfaces.SpokenTimeStrategy;
+import org.playground.utils.NumbersUtil;
 
-public class PastImpl implements SpokenTimeInterface {
+public class PastStrategyImpl implements SpokenTimeStrategy {
   @Override
   public boolean supports(LocalTime time) {
     int minute = time.getMinute();
@@ -12,6 +13,8 @@ public class PastImpl implements SpokenTimeInterface {
 
   @Override
   public String speakBritishTime(LocalTime time) {
-    return MINUTES_IN_WORDS[time.getMinute()] + " past " + TIME_INDEXES[time.getHour() % 12];
+    return NumbersUtil.minuteInWords(time.getMinute())
+        + " past "
+        + NumbersUtil.hourInWords(time.getHour());
   }
 }

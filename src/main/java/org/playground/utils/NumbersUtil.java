@@ -1,15 +1,15 @@
-package org.playground.interfaces;
+package org.playground.utils;
 
-import java.time.LocalTime;
+public final class NumbersUtil {
 
-public interface SpokenTimeInterface {
+  private NumbersUtil() {}
 
-  String[] TIME_INDEXES = {
+  private static String[] TIME_INDEXES = {
     "twelve", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten",
     "eleven"
   };
 
-  String[] MINUTES_IN_WORDS = {
+  private static String[] MINUTES_IN_WORDS = {
     "",
     "one",
     "two",
@@ -47,7 +47,11 @@ public interface SpokenTimeInterface {
     "thirty four"
   };
 
-  boolean supports(LocalTime time);
+  public static String hourInWords(int hour) {
+    return TIME_INDEXES[hour % 12];
+  }
 
-  String speakBritishTime(LocalTime time);
+  public static String minuteInWords(int minute) {
+    return MINUTES_IN_WORDS[minute];
+  }
 }

@@ -1,9 +1,10 @@
 package org.playground.implementations;
 
 import java.time.LocalTime;
-import org.playground.interfaces.SpokenTimeInterface;
+import org.playground.interfaces.SpokenTimeStrategy;
+import org.playground.utils.NumbersUtil;
 
-public class HalfPastImpl implements SpokenTimeInterface {
+public class HalfPastStrategyImpl implements SpokenTimeStrategy {
   @Override
   public boolean supports(LocalTime time) {
     return time.getMinute() == 30;
@@ -11,6 +12,6 @@ public class HalfPastImpl implements SpokenTimeInterface {
 
   @Override
   public String speakBritishTime(LocalTime time) {
-    return "half past " + TIME_INDEXES[time.getHour() % 12];
+    return "half past " + NumbersUtil.hourInWords(time.getHour());
   }
 }

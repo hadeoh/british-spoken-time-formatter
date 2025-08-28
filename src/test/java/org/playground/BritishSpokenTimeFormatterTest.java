@@ -1,15 +1,19 @@
-import static org.junit.Assert.assertEquals;
+package org.playground;
 
-import org.junit.Before;
-import org.junit.Test;
-import org.playground.BritishSpokenTimeFormatter;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.playground.exceptions.InvalidTimeFormatException;
 
 public class BritishSpokenTimeFormatterTest {
 
   BritishSpokenTimeFormatter britishSpokenTimeFormatter;
 
-  @Before
+  @BeforeEach
   public void setup() {
     britishSpokenTimeFormatter = new BritishSpokenTimeFormatter();
   }
@@ -38,8 +42,26 @@ public class BritishSpokenTimeFormatterTest {
     assertEquals("noon", result);
   }
 
-  @Test(expected = InvalidTimeFormatException.class)
+  @Test
   public void testBritishSpokenTimeForInvalidTime() {
-    britishSpokenTimeFormatter.toBritishSpokenTime("7:61");
+    assertThrows(
+        InvalidTimeFormatException.class,
+        () -> britishSpokenTimeFormatter.toBritishSpokenTime("7:61"));
+  }
+
+  @ParameterizedTest
+  @CsvSource({
+    "03:01,one past three",
+    "03:10,ten past three",
+    "04:15,quarter past four",
+    "07:30,half past seven",
+    "09:45,quarter to ten",
+    "07:35,twenty five to eight",
+    "06:32,six thirty two",
+    "00:00,midnight",
+    "12:00,noon"
+  })
+  public void testE2E(String input, String expected) {
+    assertEquals(expected, britishSpokenTimeFormatter.toBritishSpokenTime(input));
   }
 }

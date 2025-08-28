@@ -1,9 +1,10 @@
 package org.playground.implementations;
 
 import java.time.LocalTime;
-import org.playground.interfaces.SpokenTimeInterface;
+import org.playground.interfaces.SpokenTimeStrategy;
+import org.playground.utils.NumbersUtil;
 
-public class OClockImpl implements SpokenTimeInterface {
+public class OClockStrategyImpl implements SpokenTimeStrategy {
 
   @Override
   public boolean supports(LocalTime time) {
@@ -12,6 +13,6 @@ public class OClockImpl implements SpokenTimeInterface {
 
   @Override
   public String speakBritishTime(LocalTime time) {
-    return TIME_INDEXES[time.getHour() % 12] + " o'clock";
+    return NumbersUtil.hourInWords(time.getHour()) + " o'clock";
   }
 }
